@@ -98,7 +98,7 @@ function App() {
   return (
     <>
       <div className='container'>
-        <h3>CRUD Application with react and node.</h3>
+        <h3>CRUD Application with React and Node.js</h3>
         <div className='input-search'>
           <input type='search'placeholder='Search Text Here'  onChange={handleSearchChange}/>
           <button  className='btn green' onClick={handleAddRecord}>ADD Record</button>
