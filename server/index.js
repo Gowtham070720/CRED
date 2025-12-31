@@ -1,11 +1,11 @@
 const express = require('express');
-const users = require('./sample.json');
+let users = JSON.parse(fs.readFileSync('./sample.json', 'utf-8'));
 const cors = require('cors');
 const fs = require('fs');
 const app = express();
 app.use(express.json());
 const PORT = process.env.PORT || 3000;
-app.use(cors({ origin: 'http://localhost:5173' ,methods:['GET','POST','PUT','DELETE','PATCH']}));
+app.use(cors());
 app.get('/users', (req, res) => {
     return res.json(users);
 });
