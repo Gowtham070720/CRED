@@ -1,7 +1,9 @@
 const express = require('express');
-let users = JSON.parse(fs.readFileSync('./sample.json', 'utf-8'));
-const cors = require('cors');
 const fs = require('fs');
+const cors = require('cors');
+let users = JSON.parse(fs.readFileSync('./sample.json', 'utf-8'));
+
+
 const app = express();
 app.use(express.json());
 const PORT = process.env.PORT || 3000;
