@@ -11,7 +11,7 @@ function App() {
     // Function to fetch all users from the backend
   const getAllUsers = async () => {
     try {
-      const res = await axios.get('http://localhost:3000/users');
+      const res = await axios.get('https://cred-i8cs.onrender.com/users');
       setUsers(res.data);
       setFilteredUsers(res.data);
     } catch (error) {
@@ -40,7 +40,7 @@ function App() {
   const handleDelet = async (id) => {
     const isConfirm = window.confirm("Are you sure you want to delete this user?");
     if (isConfirm){
-      await axios.delete(`http://localhost:3000/users/${id}`).then((res) => {
+      await axios.delete(`https://cred-i8cs.onrender.com/users/${id}`).then((res) => {
         setUsers(res.data); 
         setFilteredUsers(res.data);
       });
@@ -70,13 +70,13 @@ function App() {
     e.preventDefault();
     if(userData.id){
       // Update functionality can be implemented here
-      await axios.patch(`http://localhost:3000/users/${userData.id}`, userData).then((res)=>{
+      await axios.patch(`https://cred-i8cs.onrender.com/users/${userData.id}`, userData).then((res)=>{
       console.log(res);
     });
 
     }else{
       // Add new user
-      await axios.post('http://localhost:3000/users', userData).then((res)=>{
+      await axios.post('https://cred-i8cs.onrender.com/users', userData).then((res)=>{
       console.log(res);
     });
       
